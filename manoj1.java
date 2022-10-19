@@ -1,4 +1,4 @@
- public class manoj1{
+ class manoj1{
 
 static  void h(){
 	
