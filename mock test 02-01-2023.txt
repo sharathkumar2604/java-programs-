@@ -1,0 +1,235 @@
+1) In OOPs how does abstraction differ from encapsulation?
+abstraction:
+where abstraction means hidding the implementation and showing the fuctionality is called abstraction
+
+encapsulation: 
+Encapsulation is the process of bundling the data and methods that operate on that data within a single unit, or object. 
+--------------------------------------------------------------------------------------------------------------------
+2) what is the difference between IS-a relationship and HAS-a relation ship?
+
+
+Is-a relationship means parent and child relation ship 
+example 
+single inheritance 
+multilevel inheritance 
+and heirachical inheritance 
+
+
+HAS-relationship is a type of composition relationship in which one class has an instance of another class as one of its members.
+example like 
+association  
+
+--------------------------------------------------------------------------------------------------------------------
+
+3)why java doesn't support multiple inheritance?
+where multiple inheritance says multi where one child can't inherit the propertied of two parent 
+
+
+where this creates ambiguity problem so the  multiple inheritance can't support through class so we acn achieve this with interface
+
+---------------------------------------------------------------------------------------------------------------------
+
+4)Triangle star pattern 
+enter the number of rows 5
+      *
+     * *
+    *   *
+   *     *
+  *********
+  
+  
+  import java.util.Scanner;//i am importing scanner class
+
+public class TriangleStarPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= rows - i; j++) {
+                System.out.print(" ");
+            }
+
+            if (i == 1 || i == rows) {
+                for (int j = 1; j <= rows; j++) {
+                    System.out.print("*");
+                }
+            } else {
+                System.out.print("*");
+                for (int j = 1; j <= i - 2; j++) {
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------
+5)Write a java program to calculate total number of characters in the String?
+
+
+import scanner 
+
+public class CharacterCount {
+    p.s.v.m(String[] args) {
+        
+        Scanner s = new Scanner(System.in);
+
+       
+        System.out.print("Enter a string: ");
+        String str = s.nextLine();
+
+        
+        int count = str.length();
+
+       
+        System.out.println("The string has " + count + " characters.");
+    }
+}
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+6)write a program to reverse a string?
+
+import java.util.Scanner;
+
+public class ReverseString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Enter a string: ");
+        String str = scanner.nextLine();
+
+        
+        String reversed = new StringBuilder(str).reverse().toString();
+
+        
+        System.out.println("The reversed string is: " + reversed);
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------
+
+7)difference between equals() method and equality operator (==) in Java?
+
+
+The == operator is a Java operator that is used to compare the equality of two variables or expressions.
+
+The equals() method compares the equality of two objects based on their content
+-----------------------------------------------------------------------------------------------------------------------
+8)How Can You Create Constants In Java?
+
+
+In Java, constants are variables that are declared with the final keyword and cannot be modified after they have been initialized.
+
+------------------------------------------------------------------------------------------------------------------------
+9)differnce between public ,private ,protected modifer in java ?
+
+
+public  ---> member is accessible from anywhere. It can be accessed from outside the package in which it is declared
+ as well as from subclasses the same package or a different package.
+
+ private ----> It cannot be accessed from outside the class, even by subclasses
+
+
+protected ---->member is accessible within the package in which it is declared as well as from subclasses 
+the class in which it is declared subclass is in the same package or a different package.
+
+
+
+
+10)define Wrapper classes in java?
+
+where is not pure object oriented bcz java is still fallowd primitive data type so if u want to say java pure object oriented so those come up with wrapper class
+
+
+byte---Byte
+short---Short
+int ----Integer
+long---Long
+float---Float
+double---Double
+boolean: Boolean
+char: Character 
+
+
+----------------------------------------------------------------------------
+11)What do system.gc() and runtimegc() method do?
+System.gc->is a method of the System class in the Java programming language that can be used to request garbage collection to be performed. 
+This method is a hint to the Java virtual machine that it might be a good time to perform garbage collection, but the Java virtual machine is not required
+
+is a method of runtime.gc-the Runtime class in the Java programming language that can be used to request garbage collection to be performed. 
+Like System.gc(), this method is also a hint to the Java virtual machine that it might be a good time to perform garbage collection.
+
+
+----------------------------------------------------------------------------------------------------------------
+12)whar are the difference  between  Heap and stack memory in java?
+heap meamory: heap memory will store the allocate the space for object after the object creation 
+The heap is a region of memory that is shared among all parts of the application
+ It is used to store objects that are created at runtime, as well as arrays and other data structures. 
+The heap is dynamic, meaning that it grows and shrinks as needed during the execution of the program.
+ 
+stack memory: jvm perform exection in stack memory
+The stack is a region of memory that is used to store local variables and function calls. 
+Each time a function is called, a new frame is created on the top of the stack to store the local variables and function arguments for that function. When the function returns, its frame is removed from the top of the stack. 
+The stack is static meaning that it has a fixed size when the program is compiled.
+
+-----------------------------------------------------------------------------------------------------------------------------
+13)Write a java program to check whether input string is palindrome of the given string or not?
+
+import java.util.Scanner;
+
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+
+       
+        System.out.print("Enter a string: ");
+        String str = scanner.nextLine();
+
+        
+        boolean isPalindrome = true;
+        for (int i = 0; i < str.length() / 2; i++) {
+            if (str.charAt(i) != str.charAt(str.length() - i - 1)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+       
+        if (isPalindrome) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------
+14)
+
+
+
+-------------------------------------------------------------------------------------------------------
+
+15)explain the use of final keyword in variable,method and class and differ between final and static keyword?
+
+final -A final variable is a variable that cannot be reassigned.
+
+Once a value has been assigned to a final variable
+it cannot be changed.
+Final variables must be initialized at the time they are declared.
+
+
+
+static-  where these static means that can be called directly with in the classs
+ if u want to call outside the class u can with class name.
+u can reinitialized .
+
+ 
